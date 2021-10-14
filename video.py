@@ -5,7 +5,6 @@ import numpy as np
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
 # import Client from twilio API
-from twilio.rest import Client
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 train_dir = "/Users/aishaandatt/Downloads/IBM/Celebs_Mega"
 generator = ImageDataGenerator()
@@ -32,26 +31,6 @@ while(1):
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 1)
 
     pred = model.predict_classes(x)
-    # if pred[0] == 2:
-    #     # twilio account ssid
-    #     account_sid = 'AC4c30xxxxx'
-    #     # twilo account authentication toke
-    #     auth_token = 'd22f9b76fxxxxx'
-    #     client = Client(account_sid, auth_token)
-
-    #     message = client.messages \
-    #         .create(
-    #             body='Danger!. Wild animal is detected, stay alert',
-    #             from_=' +12293xxxxx',  # the free number of twilio
-    #             to='+9191xxxxx')
-    #     print(message.sid)
-    #     print('Danger!!')
-    #     print('Animal Detected')
-    #     print('SMS sent!')
-    #     # break
-    # else:
-    #     print("No Danger")
-    # break
     cv2.imshow("image", frame)
     if cv2.waitKey(1) & 0xFF == ord('a'):
         break
