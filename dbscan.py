@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.cluster import DBSCAN
 from sklearn import metrics
@@ -7,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 
 # #############################################################################
 # Generate sample data
-centers = [[1, 1], [-1, -1], [1, -1]]
+centers = [[1, 1], [-1, -1], [1, -1], [2, 2]]
 X, labels_true = make_blobs(n_samples=750, centers=centers, cluster_std=0.4,
                             random_state=0)
 
@@ -38,7 +39,6 @@ print("Silhouette Coefficient: %0.3f"
 
 # #############################################################################
 # Plot result
-import matplotlib.pyplot as plt
 
 # Black removed and is used for noise instead.
 unique_labels = set(labels)
