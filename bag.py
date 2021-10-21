@@ -50,7 +50,7 @@ class BOV:
         self.bov_helper.developVocabulary(n_images = self.trainImageCount, descriptor_list=self.descriptor_list)
 
         # show vocabulary trained
-        # self.bov_helper.plotHist()
+        self.bov_helper.plotHist()
  
 
         self.bov_helper.standardize()
@@ -103,7 +103,7 @@ class BOV:
 
         predictions = []
 
-        for word, imlist in self.testImages.iteritems():
+        for word, imlist in self.testImages.items():
             print ("processing " ,word)
             for im in imlist:
                 # print imlist[0].shape, imlist[1].shape
