@@ -5,6 +5,17 @@ from sklearn.cluster import KMeans
 from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 from matplotlib import pyplot as plt
+# from keras.applications.vgg16 import VGG16
+# from tensorflow.keras.applications.vgg16 import VGG16
+# from tensorflow.keras.applications.vgg16 import preprocess_input
+# from tensorflow.keras.preprocessing.image import load_img
+# from tensorflow.keras.preprocessing.image import img_to_array
+# from tensorflow.keras.models import Model
+# from matplotlib import pyplot
+# from numpy import expand_dims
+
+
+# model = VGG16(weights='imagenet',include_top=False)
 
 
 class ImageHelpers:
@@ -17,6 +28,7 @@ class ImageHelpers:
 
     def features(self, image):
         keypoints, descriptors = self.sift_object.detectAndCompute(image, None)
+        print(descriptors)
         return [keypoints, descriptors]
 
 
@@ -131,8 +143,7 @@ class FileHelpers:
         imlist = {}
         count = 0
         for each in glob(path + "*"):
-            word = each.split("/")[-1]
-
+            word = each.split("/")[-1] 
             print(" #### Reading image category ", word, " ##### ")
             imlist[word] = []
             for imagefile in glob(path+word+"/*"):
@@ -142,3 +153,5 @@ class FileHelpers:
                 count += 1
 
         return [imlist, count]
+
+
