@@ -1,0 +1,6 @@
+%%writefile file.txt
+This is the first word.
+This is the second text, Hello! How are you?
+This is the third, this is it now.
+This is the algorithm enticed for hashing
+Hashing insn't performed linearly on large datasets.
